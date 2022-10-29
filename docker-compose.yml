@@ -11,3 +11,20 @@ services:
       - /nextcloud/data:/data
     ports:
       - 8091:443
+
+  mariadb:
+    image: lscr.io/linuxserver/mariadb:latest
+    container_name: nextcloud_db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MYSQL_ROOT_PASSWORD=${ROOT_ACCESS_PASSWORD}
+      - TZ=America/Montevideo
+      - MYSQL_DATABASE=${USER_DB_NAME}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD}
+    volumes:
+      - /nextcloud/db:/config
+    ports:
+      - 3306:3306
+    restart: unless-stopped
