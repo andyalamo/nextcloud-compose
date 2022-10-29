@@ -1,0 +1,13 @@
+services:
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Montevideo
+    volumes:
+      - /opt/nextcloud_andcar/config:/config
+      - /nextcloud/data:/data
+    ports:
+      - 8091:443
