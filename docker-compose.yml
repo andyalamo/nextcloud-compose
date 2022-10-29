@@ -21,7 +21,7 @@ services:
       - PGID=1000
       - MYSQL_ROOT_PASSWORD=${ROOT_ACCESS_PASSWORD}
       - TZ=America/Montevideo
-      - MYSQL_DATABASE=${USER_DB_NAME}
+      - MYSQL_DATABASE=${DB_NAME}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${DATABASE_PASSWORD}
     volumes:
