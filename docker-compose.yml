@@ -10,7 +10,8 @@ services:
       - /opt/nextcloud_andcar/config:/config
       - /nextcloud/data:/data
     ports:
-      - 8091:443
+      #- 8091:443
+      - 8091:80
 
   mariadb:
     image: lscr.io/linuxserver/mariadb:latest
