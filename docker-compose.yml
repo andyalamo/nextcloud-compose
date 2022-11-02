@@ -14,7 +14,7 @@ services:
       - NEXTCLOUD_ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - NEXTCLOUD_TRUSTED_DOMAINS=${TRUSTED_DOMAINS}
     volumes:
-      #- /opt/nextcloud_andcar/config:/config
+      ##- /opt/nextcloud_andcar/config:/config
       #- /nextcloud/data:/data
       - /nextcloud/html:/var/www/html
     ports:
