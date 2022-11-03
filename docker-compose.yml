@@ -21,8 +21,9 @@ services:
       - 8091:80
 
   mariadb:
-    image: lscr.io/linuxserver/mariadb:latest
+    image: mariadb:latest
     container_name: nextcloud_db
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     environment:
       - PUID=1000
       - PGID=1000
@@ -32,7 +33,7 @@ services:
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${DATABASE_PASSWORD}
     volumes:
-      - /nextcloud/db:/config
+      - /nextcloud/db:/var/lib/mysql
     ports:
       - 3306:3306
     restart: unless-stopped
