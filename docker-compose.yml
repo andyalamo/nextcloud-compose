@@ -16,6 +16,8 @@ services:
       - /nextcloud/html:/var/www/html
     ports:
       - 8091:80
+    depends_on:
+      - mariadb
 
   mariadb:
     image: mariadb:latest
